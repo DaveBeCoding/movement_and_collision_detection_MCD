@@ -12,9 +12,9 @@ WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
 # Simulation properties
-bullet_radius = 5
-bullet_speed = 100
-bullet_x, bullet_y = WIDTH // 2, HEIGHT - 50
+object_radius = 5
+object_speed = 100
+object_x, object_y = WIDTH // 2, HEIGHT - 50
 target_radius = 50
 target_x, target_y = WIDTH // 2, 100
 running = True
@@ -23,12 +23,12 @@ running = True
 def calculate_distance(x1, y1, x2, y2):
     return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
-# Function to update bullet position
-def update_bullet():
-    global bullet_y
-    bullet_y -= bullet_speed / 60  # Update bullet position (assuming 60 FPS)
-    if bullet_y <= target_y + target_radius:
-        return False  # Bullet hit the target
+# Function to update object position
+def update_object():
+    global object_y
+    object_y -= object_speed / 60  # Update object position (assuming 60 FPS)
+    if object_y <= target_y + target_radius:
+        return False  # object hit the target
     return True
 
 # WebSocket handler
@@ -37,12 +37,12 @@ async def handle_client(websocket, path):
     clock = pygame.time.Clock()
 
     while running:
-        running = update_bullet()
+        running = update_object()
 
         # Prepare data to send
         data = {
-            "bullet_x": bullet_x,
-            "bullet_y": bullet_y,
+            "object_x": object_x,
+            "object_y": object_y,
             "target_x": target_x,
             "target_y": target_y,
             "target_radius": target_radius

@@ -1,0 +1,32 @@
+# Movement and Collision Detection (MCD)
+
+**MCD** is a simple simulation project built with **Pygame** and **Python**, designed to demonstrate basic movement and collision detection between a bullet and a target. The project includes real-time data transmission via **WebSockets**, making it useful for simulations where data needs to be shared with external clients or systems.
+
+## Features
+
+- Bullet movement simulation with a constant speed.
+- Collision detection between a bullet and a target.
+- Real-time data transmission using WebSockets.
+- Pygame-based visual representation of the simulation.
+
+## Technologies
+
+- **Python**
+- **Pygame**
+- **WebSockets**
+- **Asyncio**
+
+## Requirements
+
+Make sure you have the following installed:
+
+- **Python 3.7+**
+- **Pygame**: `pip install pygame`
+- **WebSockets**: `pip install websockets`
+
+## Installation
+
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/yourusername/MCD.git
+   cd MCD
