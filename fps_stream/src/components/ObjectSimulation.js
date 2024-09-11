@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const BulletSimulation = () => {
+const ObjectSimulation = () => {
   const canvasRef = useRef(null);
   const [ws, setWs] = useState(null);
 
@@ -31,9 +31,9 @@ const BulletSimulation = () => {
     ctx.fillStyle = "blue";
     ctx.fill();
 
-    // Draw the bullet
+    // Draw the Object
     ctx.beginPath();
-    ctx.arc(data.bullet_x, data.bullet_y, 5, 0, 2 * Math.PI);
+    ctx.arc(data.Object_x, data.Object_y, 5, 0, 2 * Math.PI);
     ctx.fillStyle = "red";
     ctx.fill();
   };
@@ -41,4 +41,4 @@ const BulletSimulation = () => {
   return <canvas ref={canvasRef} width={800} height={600}></canvas>;
 };
 
-export default BulletSimulation;
+export default ObjectSimulation;
