@@ -4,8 +4,8 @@
 
 ## Features
 
-- Bullet movement simulation with a constant speed.
-- Collision detection between a bullet and a target.
+- Object movement simulation with a constant speed.
+- Collision detection between a object and a target.
 - Real-time data transmission using WebSockets.
 - Pygame-based visual representation of the simulation.
 
